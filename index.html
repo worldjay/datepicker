@@ -34,17 +34,20 @@
             </div>
             <div id="datepicker">
             </div>
-            <div class="buttonright">
-                <input type="button" data-icon="delete" data-iconpos="left" data-mini="true" value="删除"
-                       data-inline="true">
-            </div>
         </div>
-        <input type="button" data-icon="plus" value="添加" id="addNew">
-    </div>
-    <div data-role="footer" data-position="fixed">
-        <h4>footer</h4>
+        <div data-role="popup" id="addReason" data-theme="a" class="ui-corner-all">
+            <textarea name="textarea-1" id="textarea-1" placeholder="请输入具体请假原因"></textarea>
+        </div>
+        <a href="#addReason" data-rel="popup" data-position-to="window" data-transition="pop"
+           class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-edit ui-btn-icon-left ui-btn-a">请假原因</a>
+        <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a">提交</a>
+
+        <div class="selectedDate">
+            </div>
+
     </div>
 </div>
+
 
 
 <script>
@@ -64,21 +67,34 @@
 //    });
 
 
-    $(function () {
+$(function () {
+
         var leaveDates = new Array();
         $( "#datepicker" ).datepicker({
             onSelect: function(dateText, inst){
                 //检查数组中不存在就放入
                 if ($.inArray(dateText,leaveDates) == -1 ){
-                    leaveDates.push(dateText)
-                    console.log(leaveDates)
+                    leaveDates.push(dateText);
+                    $(".selectedDate").append('<input type="button" data-icon="delete" data-iconpos="left" data-mini="true"  data-inline="true" id="selectedDate" value="' + dateText + '">');
+                    $(".selectedDate").trigger("create");
                 }
-
-
             },
         });
         $('#addNew').click(function(){
         })
+    $("#selectedDate").click(function () {
+        console.log("selectdataclicked")
+        $(this).remove();
+    })
+    $(document).click(function (e) {
+        var v_id = $(e.target).attr('id');
+        if (v_id == 'selectedDate') {
+            $(e.target).remove();
+            leaveDates.splice(jQuery.inArray($(e.target).val(), leaveDates), 1)
+            console.log(leaveDates)
+        }
+    })
+
     })
 </script>
 </body>

@@ -63,3 +63,11 @@ html body .ui-datepicker .ui-state-active {
 	text-shadow: 0 /*{a-bar-shadow-x}*/ 1px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ #eee /*{a-bar-shadow-color}*/;
 	font-weight: bold;
 }
+
+html body .ui-datepicker .ui-state-selected {
+	/* ui-btn-active */
+	background-color: #3388cc /*{a-active-background-color}*/;
+	border-color: #3388cc /*{a-active-border}*/;
+	color: #fff /*{a-active-color}*/;
+	text-shadow: 0 /*{a-active-shadow-x}*/ 1px /*{a-active-shadow-y}*/ 0 /*{a-active-shadow-radius}*/ #005599 /*{a-active-shadow-color}*/;
+}
