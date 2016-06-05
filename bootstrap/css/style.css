@@ -9,3 +9,7 @@
     margin-left: -70px;
     float: right;
 }
+
+#addReason {
+    width: 100% !important;
+}

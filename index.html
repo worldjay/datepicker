@@ -36,7 +36,7 @@
             </div>
         </div>
         <div data-role="popup" id="addReason" data-theme="a" class="ui-corner-all">
-            <textarea name="textarea-1" id="textarea-1" placeholder="请输入具体请假原因"></textarea>
+            <textarea name="textarea-1" id="textarea-1" placeholder="请输入具体请假原因..."></textarea>
         </div>
         <a href="#addReason" data-rel="popup" data-position-to="window" data-transition="pop"
            class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-edit ui-btn-icon-left ui-btn-a">请假原因</a>
@@ -94,6 +94,11 @@ $(function () {
             console.log(leaveDates)
         }
     })
+    $("#addReason textarea").on("focus", function () {
+        $("#addReason").popup("reposition", {
+            y: 0
+        });
+    });
 
     })
 </script>
