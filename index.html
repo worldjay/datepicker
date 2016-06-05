@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>请假申请</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -42,13 +42,19 @@
                 <option value="3">病假</option>
             </select>
         </div>
-        <a href="#addReason" data-rel="popup" data-position-to="window" data-transition="pop"
-           class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-edit ui-btn-icon-left ui-btn-a">请假原因</a>
-        <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a">提交</a>
+
 
         <div class="selectedDate">
             </div>
 
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <a href="#addReason" data-rel="popup" data-position-to="window" data-transition="pop"
+           class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-edit ui-btn-icon-left ui-btn-a"
+           style="margin-left: 5px">请假原因</a>
+
+        <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
+           style="float:right">提交</a>
     </div>
 </div>
 
@@ -95,7 +101,8 @@ $(function () {
         var v_id = $(e.target).attr('id');
         if (v_id == 'selectedDate') {
             $(e.target).remove();
-            leaveDates.splice(jQuery.inArray($(e.target).val(), leaveDates), 1)
+            console.log($(e.target).context.innerText)
+            leaveDates.splice($.inArray($(e.target).context.innerText, leaveDates), 1)
             console.log(leaveDates)
         }
     })
