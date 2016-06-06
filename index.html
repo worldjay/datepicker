@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="bootstrap/css/style.css">
     <!--<script src="bootstrap/js/jquery.mobile.datepicker.js"></script>-->
     <script src="bootstrap/js/datepicker.js"></script>
+
 </head>
 
 <body>
@@ -83,6 +84,7 @@ $(function () {
         $( "#datepicker" ).datepicker({
             onSelect: function(dateText, inst){
                 //检查数组中不存在就放入
+                $(this).attr("class", "dark");
                 if ($.inArray(dateText,leaveDates) == -1 ){
                     leaveDates.push(dateText);
                     //  $(".selectedDate").append('<input type="button"  data-icon="delete" data-iconpos="left" data-mini="true"  data-inline="true" id="selectedDate" value="' + dateText + '">');
@@ -111,7 +113,10 @@ $(function () {
             y: 0
         });
     });
+    $(document).on("click", "td", function () {
 
+        $(this).attr("class", "dark");
+    })
     })
 </script>
 </body>

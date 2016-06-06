@@ -5,3 +5,8 @@
     margin-right: 0px;
 
 }
+
+.dark {
+    background-color: #080808 !important;
+    color: yellow !important;
+}
