@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="bootstrap/css/style.css">
     <!--<script src="bootstrap/js/jquery.mobile.datepicker.js"></script>-->
     <script src="bootstrap/js/datepicker.js"></script>
+    <script type="text/javascript">
+        var Selected
 
+    </script>
 </head>
 
 <body>
@@ -99,6 +102,12 @@ $(function () {
         console.log("selectdataclicked")
         $(this).remove();
     })
+    $("#calendar tr td a").click(function () {
+        console.log("clieck")
+        $(this).addClass("ui-state-acc")
+        console.log($(this))
+    });
+
     $(document).click(function (e) {
         var v_id = $(e.target).attr('id');
         if (v_id == 'selectedDate') {
@@ -108,16 +117,14 @@ $(function () {
             console.log(leaveDates)
         }
     })
+
     $("#addReason textarea").on("focus", function () {
         $("#addReason").popup("reposition", {
             y: 0
-        });
-    });
-    $(document).on("click", "td", function () {
+        })
+    })
 
-        $(this).attr("class", "dark");
-    })
-    })
+})
 </script>
 </body>
 </html>

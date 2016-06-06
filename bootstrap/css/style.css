@@ -10,3 +10,11 @@
     background-color: #080808 !important;
     color: yellow !important;
 }
+
+.ui-state-acc {
+    /* ui-btn-active */
+    background-color: #3388cc !important; /*{a-active-background-color}*/;
+    border-color: #3388cc !important; /*{a-active-border}*/;
+    color: #fff !important; /*{a-active-color}*/;
+    text-shadow: 0 /*{a-active-shadow-x}*/ 1px /*{a-active-shadow-y}*/ 0 /*{a-active-shadow-radius}*/ #005599 /*{a-active-shadow-color}*/;
+}
